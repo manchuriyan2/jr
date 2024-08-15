@@ -224,7 +224,7 @@ async def start_handler(c: Client, m: Message):
                     reply_to_message_id=m.id,
                 )
                 return
-            if int(ad_msg.split(":")[1]) > int(get_current_time() + 43200):  #Timeout
+            if int(ad_msg.split(":")[1]) > int(get_current_time() + 86400):  #Timeout
                 await c.send_message(
                     m.chat.id,
                     "**Dont try to be over smart**",
@@ -280,7 +280,7 @@ async def files_handler(c: Client, m: Message):
     if Config.PAID_BOT.upper() == "YES":
         result = collection.find_one({"user_id": uid})
         if result is None:
-            ad_code = str_to_b64(f"{uid}:{str(get_current_time() + 43200)}") #Timeout
+            ad_code = str_to_b64(f"{uid}:{str(get_current_time() + 86400)}") #Timeout
             ad_url = shorten_url(f"https://t.me/{bot_username}?start={ad_code}") 
             await c.send_message(
                 m.chat.id,
@@ -296,7 +296,7 @@ Your verification is expired, click on below button and complete the verificatio
             )
             return
         elif int(result["time_out"]) < get_current_time():
-            ad_code = str_to_b64(f"{uid}:{str(get_current_time() + 43200)}") #Timeout
+            ad_code = str_to_b64(f"{uid}:{str(get_current_time() + 86400)}") #Timeout
             ad_url = shorten_url(f"https://t.me/{bot_username}?start={ad_code}") 
             await c.send_message(
                 m.chat.id,
