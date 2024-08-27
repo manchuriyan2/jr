@@ -262,7 +262,7 @@ Hit /help to learn, how to use this bot.</b>""",
                 [InlineKeyboardButton("📢 Purchase Premium membership", callback_data="premium")],
                 [
                     InlineKeyboardButton("⛅ More Bots", url="https://t.me/jr_bots"),
-                    InlineKeyboardButton("🌨️ Developer", url=f"https://t.me/StupidBoi69"),
+                    InlineKeyboardButton("🌨️ Developer", url=f"https://t.me/{Config.OWNER_USERNAME}"),
                 ],
                 [InlineKeyboardButton("📴 Close", callback_data="close")],
             ]
@@ -558,14 +558,13 @@ Now, hit /about to learn more about this bot. </b>""",
 async def about_handler(c: Client, m: Message):
     await m.reply_text(
         text="""
-────────────────────────
-────────────────────────""",
+🏷️""",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("Purchase premium membership", callback_data="premium")],
                 [
-                    InlineKeyboardButton("🪢 More Bots", url=f"t.me/StupidBoi69"),
+                    InlineKeyboardButton("🪢 More Bots", url=f"t.me/jr_bots"),
                     InlineKeyboardButton("💭 Feedback", url=f"https://t.me/{Config.OWNER_USERNAME}")
                 ],
                 [InlineKeyboardButton("📴 Close", callback_data="close")],
